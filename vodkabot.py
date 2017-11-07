@@ -16,7 +16,7 @@ offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
 
 print client._loginresult()
 
-sendMesaage = """D̸͟͞E̸͟͞S̸͟͞T̸͟͞R̸͟͞O̸͟͞Y̸͟͞E̸͟͞R̸͟͞ T̸͟͞E̸͟͞A̸͟͞M̸͟͞
+sendMessage = """D̸͟͞E̸͟͞S̸͟͞T̸͟͞R̸͟͞O̸͟͞Y̸͟͞E̸͟͞R̸͟͞ T̸͟͞E̸͟͞A̸͟͞M̸͟͞
 ==============
 C̶o̶m̶m̶a̶n̶d̶ A̶d̶m̶i̶n̶
 ==============
@@ -242,13 +242,13 @@ def SEND_MESSAGE(op):
                     sendMessage(msg.to, "Current time is" + datetime.datetime.today().strftime('%Y年%m月%d日 %H:%M:%S') + "is")
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
-		if msg.text == "Key","help","Help":
+		if msg.text == "help":
               #  if wait["lang"] == "JP":
                     sendMessage(msg.to,helpMessage)
-                else:
-                    sendMessage(msg.to,helpt)
+              #  else:
+                  #  sendMessage(msg.to,helpt)
                 if msg.text == "set":
-                    sendMessage(msg.to, "Siap! Untuk melihat Member yang On di group ini. \n===> Key「tes」untuk memulai.")
+                    sendMessage(msg.to, "Siap! Untuk melihat Member yang On di grup ini. \n===> Key「tes」untuk memulai.")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
