@@ -16,6 +16,30 @@ offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
 
 print client._loginresult()
 
+sendMesaage = """D̸͟͞E̸͟͞S̸͟͞T̸͟͞R̸͟͞O̸͟͞Y̸͟͞E̸͟͞R̸͟͞ T̸͟͞E̸͟͞A̸͟͞M̸͟͞
+==============
+C̶o̶m̶m̶a̶n̶d̶ A̶d̶m̶i̶n̶
+==============
+▫Me
+▫Mid
+▫Gid
+▫Gift
+▫Ginfo
+▫Gname
+▫Gurl
+▫Ourl
+▫Curl
+▫Cancel
+▫Kick
+▫Nk
+▫Invite
+▫Show
+▫Time
+▫Set
+▫Tes
+==============
+"""
+
 wait = {
     'readPoint':{},
     'readMember':{},
@@ -192,7 +216,7 @@ def SEND_MESSAGE(op):
                 if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
-                        sendMessage(op.message.to, "No one is inviting.")
+                        sendMessage(op.message.to, "Tidak ada undangan.")
                     else:
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
@@ -218,8 +242,13 @@ def SEND_MESSAGE(op):
                     sendMessage(msg.to, "Current time is" + datetime.datetime.today().strftime('%Y年%m月%d日 %H:%M:%S') + "is")
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
+		if msg.text == "Key","help","Help":
+              #  if wait["lang"] == "JP":
+                    sendMessage(msg.to,helpMessage)
+                else:
+                    sendMessage(msg.to,helpt)
                 if msg.text == "set":
-                    sendMessage(msg.to, "I have set a read point ♪\n「tes」I will show you who I have read ♪")
+                    sendMessage(msg.to, "Siap! Untuk melihat Member yang On di group ini. \n===> Key「tes」untuk memulai.")
                     try:
                         del wait['readPoint'][msg.to]
                         del wait['readMember'][msg.to]
